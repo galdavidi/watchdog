@@ -6,6 +6,7 @@ Author: gal davidi
 import os
 import time
 import sys
+import docopt
 
 DEFAULT_SAMPLE_INTERVAL = 60  # 60 sec
 
