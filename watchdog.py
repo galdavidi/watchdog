@@ -6,9 +6,19 @@ Author: gal davidi
 import os
 import time
 import sys
-import docopt
+from docopt import docopt
 
 DEFAULT_SAMPLE_INTERVAL = 60  # 60 sec
+DOC_MSG = '''main.
+Usage:
+  watchdog.py  <path>  <sec>
+
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+
+'''
 
 
 def interval(dir_path, sec=DEFAULT_SAMPLE_INTERVAL):
@@ -32,8 +42,9 @@ def sample(path, old_ls):
 
 
 def main():
-    dir_path = sys.argv[1]
-    interval_time = int(sys.argv[2])
+    arguments = docopt(DOC_MSG, help=True, version="1")
+    dir_path = arguments['<path>']
+    interval_time = int(arguments['<sec>'])
     interval(dir_path, interval_time)
 
 
