@@ -1,14 +1,15 @@
 #!/bin/python3
 '''
-Author: gal davidi
+Author: Gal Davidi
 '''
 
 import os
 import sys
 import time
 import signal
-from dir_op import DirOp
 from docopt import docopt
+
+from dir_op import DirOp
 
 DEFAULT_SAMPLE_INTERVAL = 60  # 60 sec
 DOC_MSG = '''main.
