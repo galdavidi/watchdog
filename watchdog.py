@@ -14,7 +14,7 @@ from dir_op import DirOp
 DEFAULT_SAMPLE_INTERVAL = 60  # 60 sec
 DOC_MSG = '''main.
 Usage:
-  watchdog.py  <path>  <sec>
+  watchdog.py  <path>  <sec> <logfile_path>
 
 
 Options:
@@ -57,6 +57,7 @@ def main():
     arguments = docopt(DOC_MSG, help=True, version="1")
     dir_path = arguments['<path>']
     interval_time = int(arguments['<sec>'])
+    logfile_path = arguments['<logfile_path>']
     interval(dir_path, interval_time)
 
 
